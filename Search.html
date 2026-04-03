@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Page</title>
+        <script type="text/javascript">
+            function checkForm()
+            {
+                model = document.getElementById("ml").value;
+                year = document.getElementById("yr").value;
+                patt1 = /[0-9a-zA-Z]+/;
+                patt2 = /^[12]\d{3}$/;
+                if (!patt1.test(model))
+                {
+                    alert("please enter a valid model name");
+                    document.getElementById("ml").select();
+                    return false;
+                }
+                if(!patt2.test(year))
+                {
+                    alert("please enter a valid year");
+                    document.getElementById("yr").select();
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="checkForm()">
+            Model:<input type="text" id="ml"><br/>
+            Year:<input type="text" id="yr"><br/>
+            <input type="submit">
+        </form>
+    </body>
+</html>
