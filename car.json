@@ -3,48 +3,54 @@
     "model": "Toyota Corolla",
     "year": 2022,
     "image": "car_images/corolla.jpg",
-    "color": "White",
+    "colour": "White",
     "power": "petrol, 1.5L 121ps",
-    "price": "5.09w"
+    "price": "5.09w",
+    "location": "Guangzhou"
   },
   {
     "model": "Honda Civic",
     "year": 2023,
     "image": "car_images/civic.jpg",
-    "color": "silver-gray",
+    "colour": "silver-gray",
     "power": "petrol, 1.5T 129ps",
-    "price": "7.78w"
+    "price": "7.78w",
+    "location": "Guangzhou"
   },
   {
     "model": "Volkswagen Magotan",
     "year": 2021,
     "image": "car_images/magotan.jpg",
-    "color": "Black",
+    "colour": "Black",
     "power": "petrol, 2.0T 186ps",
-    "price": "12.45w"
+    "price": "12.45w",
+    "location": "Guangzhou"
   },
   {
     "model": "BMW 320Li",
     "year": 2023,
     "image": "car_images/330Li.jpg",
-    "color": "White",
+    "colour": "White",
     "power": "petrol, 2.0T 156ps",
-    "price": "16.96w"
+    "price": "16.96w",
+    "location": "Guangzhou"
   },
   {
     "model": "Porsche 718",
     "year": 2023,
     "image": "car_images/718.jpg",
-    "color": "White",
+    "colour": "White",
     "power": "petrol, 2.0T 250ps",
-    "price": "50.03w"
+    "price": "50.03w",
+    "location": "Guangzhou"
   },
   {
     "model": "Mercedes-Benz E300",
     "year": 2024,
     "image": "car_images/E300.jpg",
-    "color": "White",
+    "colour": "White",
     "power": "petrol, 2.0T 258ps",
-    "price": "40.46w"
+    "price": "40.46w",
+    "location": "Guangzhou"
   }
 ]
