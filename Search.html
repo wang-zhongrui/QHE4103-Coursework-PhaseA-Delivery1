@@ -7,8 +7,8 @@
             {
                 model = document.getElementById("ml").value;
                 year = document.getElementById("yr").value;
-                patt1 = /[0-9a-zA-Z]+/;
-                patt2 = /^[12]\d{3}$/;
+                patt1 = /[0-9a-zA-Z]*/;
+                patt2 = /[0-9]*/;
                 if (!patt1.test(model))
                 {
                     alert("please enter a valid model name");
