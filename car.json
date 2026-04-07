@@ -1,56 +1,50 @@
 [
   {
+    "colour": "White",
     "model": "Toyota Corolla",
     "year": 2022,
-    "image": "car_images/corolla.jpg",
-    "colour": "White",
-    "power": "petrol, 1.5L 121ps",
+    "location": "Guangzhou",
     "price": "5.09w",
-    "location": "Guangzhou"
+    "image": "car_images/corolla.jpg"
   },
   {
+    "colour": "silver-gray",
     "model": "Honda Civic",
     "year": 2023,
-    "image": "car_images/civic.jpg",
-    "colour": "silver-gray",
-    "power": "petrol, 1.5T 129ps",
+    "location": "Guangzhou",
     "price": "7.78w",
-    "location": "Guangzhou"
+    "image": "car_images/civic.jpg"
   },
   {
+    "colour": "Black",
     "model": "Volkswagen Magotan",
     "year": 2021,
-    "image": "car_images/magotan.jpg",
-    "colour": "Black",
-    "power": "petrol, 2.0T 186ps",
+    "location": "Guangzhou",
     "price": "12.45w",
-    "location": "Guangzhou"
+    "image": "car_images/magotan.jpg"
   },
   {
+    "colour": "White",
     "model": "BMW 320Li",
     "year": 2023,
-    "image": "car_images/330Li.jpg",
-    "colour": "White",
-    "power": "petrol, 2.0T 156ps",
+    "location": "Guangzhou",
     "price": "16.96w",
-    "location": "Guangzhou"
+    "image": "car_images/330Li.jpg"
   },
   {
+    "colour": "White",
     "model": "Porsche 718",
     "year": 2023,
-    "image": "car_images/718.jpg",
-    "colour": "White",
-    "power": "petrol, 2.0T 250ps",
+    "location": "Guangzhou",
     "price": "50.03w",
-    "location": "Guangzhou"
+    "image": "car_images/718.jpg"
   },
   {
+    "colour": "White",
     "model": "Mercedes-Benz E300",
     "year": 2024,
-    "image": "car_images/E300.jpg",
-    "colour": "White",
-    "power": "petrol, 2.0T 258ps",
+    "location": "Guangzhou",
     "price": "40.46w",
-    "location": "Guangzhou"
+    "image": "car_images/E300.jpg"
   }
 ]
