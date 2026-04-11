@@ -169,3 +169,85 @@ nav a:hover {
   padding: 20px;
   transition: 0.3s;
 }
+
+.page-link-card:hover {
+  border-color: #d7b37c;
+  transform: translateY(-3px);
+}
+
+.car-model {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.car-year {
+  color: #c6d0da;
+  font-size: 14px;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 10px 15px;
+    font-size: 16px;
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.04);
+    border: none;
+}
+
+
+@media (max-width: 1000px) {
+    .hero-text h2 {
+        font-size: 54px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h2 {
+        font-size: 42px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .button-group {
+        justify-content: center;
+    }
+
+    .page-links {
+        grid-template-columns: 1fr;
+    }
+}

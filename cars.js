@@ -1,4 +1,5 @@
-[
+//json can not be fetched without http, so use js instead of json
+let allcars = [
   {
     "colour": "White",
     "model": "Toyota Corolla",
@@ -29,7 +30,7 @@
     "year": 2023,
     "location": "Guangzhou",
     "price": "16.96w",
-    "image": "car_images/330Li.jpg"
+    "image": "car_images/320Li.jpg"
   },
   {
     "colour": "White",

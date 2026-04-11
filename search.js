@@ -1,15 +1,6 @@
-let allcars = [];
-
-//load cars data from json
+//display all cars when users get into the website
 window.onload = async function() {
-    try {
-        const response = await fetch('cars.json');
-        allcars = await response.json();
-        //display all cars when users get into the website
         displayCars(allcars);
-    } catch (error) {
-        console.error('Failed to load data from json:', error);
-    }
 };
 
 //function to search cars from input information(model,year)
@@ -48,15 +39,15 @@ function displayCars(cars) {
     //create cards for cars
     cars.forEach(car => {
         const card = document.createElement('div');
-        card.className = 'car-card';
+        card.className = 'page-link-card';
         card.innerHTML = `
             <img src="${car.image}" alt="${car.model}" onerror="this.src='car_images/default.jpg'">
-            <div class="car-info">
-                <div class="car-model">Colour: ${car.colour}</div>
-                <div class="car-model">Model: ${car.model}</div>
+            <div>
+                <div class="car-model">${car.model}</div>
+                <div class="car-year">Colour: ${car.colour}</div>
                 <div class="car-year">Year: ${car.year}</div>
                 <div class="car-year">Location: ${car.location}</div>
-                <div class="car-year">Price: ${car.price}</div>
+                <div class="car-year">Price: ${car.price} CNY</div>
             </div>
         `;
         resultContainer.appendChild(card);
