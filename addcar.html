@@ -35,7 +35,7 @@
           <p>Fill in the details below to publish your car advertisement.</p>
         </div>
 
-        <form id="addCarForm">
+        <form id="addCarForm"> 
           <div class="form-group">
             <label for="colour">Colour</label>
             <input type="text" id="colour" name="colour" />
@@ -51,8 +51,24 @@
             <input type="text" id="year" name="year" />
           </div>
 
-          <button type="submit">Submit</button>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" />
+          </div>
+
+          <div class="form-group">
+            <label for="image">Image of Car</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+          </div>
+
+        <button type="submit">Submit</button>
         </form>
+        
       </div>
     </div>
   </main>
