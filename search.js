@@ -4,7 +4,9 @@ window.onload = async function() {
 };
 
 //function to search cars from input information(model,year)
-function searchCars() {
+function searchCars(event) {
+    if (event) event.preventDefault();
+
     //get element and turn them to lowercase and delete spaces
     const modelInput = document.getElementById('ml').value.trim().toLowerCase();
     const yearInput = document.getElementById('yr').value.trim();

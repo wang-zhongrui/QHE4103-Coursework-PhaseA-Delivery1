@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-         <header>
+        <header>
             <div class="container navbar">
                 <div class="logo-area">
                     <img src="images/logo.png" alt="Company Logo">
@@ -22,22 +22,38 @@
                     <a href="search.html">Search</a>
                 </nav>
             </div>
-         </header>
+        </header>
 
         <script src="cars.js"></script>
         <script src="search.js"></script>
         <br/>
-        <div class="container">
-            <div class="search-box">
-                <form>
-                    Model:<input type="text" id="ml">
-                    Year:<input type="text" id="yr">
-                    <input type="button" value="search" onclick="searchCars()">
-                </form>
-            </div>
-        </div>
 
+        <main class="addcar-section">
+            <div class="container">
+                <div class="links-box">
+                    <div class="addcar-title">
+                        <h2>Search Car</h2>
+                    </div>
+
+                    <form> 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="model">Model</label>
+                                <input type="text" id="ml" name="model">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <input type="text" id="yr" name="year">
+                            </div>
+                        </div>
+                        <button onclick="searchCars(event)">Search</button>
+                    </form>
         
+                </div>
+            </div>
+        </main>
+
         <div class="links-section">
             <div class="container">
                 <div class="links-box">
