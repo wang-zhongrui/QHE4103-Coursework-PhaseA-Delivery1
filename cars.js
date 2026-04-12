@@ -47,5 +47,37 @@ let allcars = [
     "location": "Guangzhou",
     "price": "40.46w",
     "image": "car_images/E300.jpg"
+  },
+  {
+    "colour": "Blue",
+    "model": "Audi Q3 Sportback 35 TFSI",
+    "year": 2020,
+    "location": "Beijing",
+    "price": "10.05w",
+    "image": "car_images/Q3.jpg"
+  },
+  {
+    "colour": "Black",
+    "model": "Tesla Model Y",
+    "year": 2022,
+    "location": "Beijing",
+    "price": "16.88w",
+    "image": "car_images/ModelY.jpg"
+  },
+  {
+    "colour": "Deep gray",
+    "model": "Ford Bronco",
+    "year": 2024,
+    "location": "Beijing",
+    "price": "31.45w",
+    "image": "car_images/Bronco.jpg"
+  },
+  {
+    "colour": "Black",
+    "model": "McLaren GT",
+    "year": 2023,
+    "location": "Shanghai",
+    "price": "208.90w",
+    "image": "car_images/McLaren.jpg"
   }
 ]
