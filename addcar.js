@@ -10,6 +10,9 @@ addCarForm.addEventListener("submit", function (event) {
   const location = document.getElementById("location").value.trim();
   const price = document.getElementById("price").value.trim();
 
+  const yearPattern = /^(19|20)\d{2}$/;
+  const pricePattern = /^\d+$/;
+
   if (
     colour === "" ||
     model === "" ||
@@ -22,6 +25,18 @@ addCarForm.addEventListener("submit", function (event) {
     return;
   }
 
-  message.textContent = "Form submitted successfully.";
+  if (!yearPattern.test(year)) {
+    message.textContent = "Please enter a valid year.";
+    message.style.color = "red";
+    return;
+  }
+
+  if (!pricePattern.test(price)) {
+    message.textContent = "Please enter a valid price.";
+    message.style.color = "red";
+    return;
+  }
+
+  message.textContent = "Car information submitted successfully.";
   message.style.color = "#d7b37c";
 });
