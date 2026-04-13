@@ -186,3 +186,44 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 1000px) {
+  .addcar-title h2 {
+    font-size: 36px;
+  }
+
+  .addcar-box {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .addcar-box {
+    padding: 22px;
+  }
+
+  .addcar-title h2 {
+    font-size: 30px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group input {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
