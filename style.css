@@ -186,7 +186,7 @@ nav a:hover {
     }
 
     .info-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -215,4 +215,7 @@ nav a:hover {
     justify-content: center;
     }
 
+    .info-grid {
+    grid-template-columns: 1fr;
+    }
 }
