@@ -9,7 +9,7 @@ function checkRegistrationForm() {
     var namePattern=/^[a-zA-Z ]+$/; 
     var addressPattern=/^[a-zA-Z0-9 ]+$/;
     var phonePattern=/^1[0-9]{10}$/; 
-    var emailPattern=/^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.(cn|com)$/;
+    var emailPattern=/^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.(cn|com)$/;
     var usernamePattern=/^[a-zA-Z0-9]{6,}$/;
     var passwordPattern=/^[a-zA-Z0-9]{6,}$/;
     //name
