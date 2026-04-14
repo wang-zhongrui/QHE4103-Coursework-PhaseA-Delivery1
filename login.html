@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="login_and_registration_style.css">
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>AAAA - Login</title> 
@@ -37,7 +37,7 @@
         <h2>Seller Login</h2>
         <p>Please enter your username and password to access your seller account.</p>
 
-        <form>
+        <form onsubmit="return checkLoginForm();">
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username">
@@ -57,5 +57,6 @@
       </div>
     </div>
   </section>
+  <script src="script.js"></script>
 </body>
 </html>
