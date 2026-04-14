@@ -9,12 +9,12 @@ function checkRegistrationForm() {
     var namePattern=/^[a-zA-Z ]+$/; 
     var addressPattern=/^[a-zA-Z0-9 ]+$/;
     var phonePattern=/^1[0-9]{10}$/; 
-    var emailPattern = /^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.(cn|com)$/i;
+    var emailPattern=/^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[0-9a-zA-Z]+\.(cn|com)$/;
     var usernamePattern=/^[a-zA-Z0-9]{6,}$/;
     var passwordPattern=/^[a-zA-Z0-9]{6,}$/;
     //name
     if(name===""){
-        alert("Name can not be empty.");
+        alert("Name cannot be empty.");
         return false;
     }
     if(!namePattern.test(name)){
@@ -23,7 +23,7 @@ function checkRegistrationForm() {
     }
     //address
     if(address===""){
-        alert("Address can not be empty.");
+        alert("Address cannot be empty.");
         return false;
     }
     if(!addressPattern.test(address)){
@@ -32,7 +32,7 @@ function checkRegistrationForm() {
     }
     //phone
     if(phone===""){
-        alert("Phone number can not be empty.");
+        alert("Phone number cannot be empty.");
         return false;
     }
     if(!phonePattern.test(phone)){
@@ -41,7 +41,7 @@ function checkRegistrationForm() {
     }
     //email
     if(email===""){
-        alert("Email can not be empty.");
+        alert("Email cannot be empty.");
         return false;
     }
     if(!emailPattern.test(email)){
@@ -50,7 +50,7 @@ function checkRegistrationForm() {
     }
     //username
     if(username===""){
-        alert("Username can not be empty.");
+        alert("Username cannot be empty.");
         return false;
     }
     if(!usernamePattern.test(username)){
@@ -59,7 +59,7 @@ function checkRegistrationForm() {
     }
     //password
     if(password===""){
-        alert("Password can not be empty.");
+        alert("Password cannot be empty.");
         return false;
     }
     if(!passwordPattern.test(password)){
@@ -68,4 +68,33 @@ function checkRegistrationForm() {
     }
     return true;
 
+}
+function checkLoginForm() {
+    var username=document.getElementById("username").value.trim();
+    var password=document.getElementById("password").value.trim();
+
+    var usernamePattern=/^[a-zA-Z0-9]{6,}$/;
+    var passwordPattern=/^[a-zA-Z0-9]{6,}$/;
+
+    if (username==="") {
+        alert("Username cannot be empty.");
+        return false;
+    }
+
+    if (!usernamePattern.test(username)) {
+        alert("Username must be at least 6 characters and contain only letters and numbers.");
+        return false;
+    }
+
+    if (password==="") {
+        alert("Password cannot be empty.");
+        return false;
+    }
+
+    if (!passwordPattern.test(password)) {
+        alert("Password must be at least 6 characters and contain only letters and numbers.");
+        return false;
+    }
+
+    return true;
 }
