@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Page</title>
+        <link rel="stylesheet" href="search_style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container navbar">
+                <div class="logo-area">
+                    <img src="images/logo.png" alt="Company Logo">
+                    <div class="logo-text">
+                        <h1>AAAA</h1>
+                        <p>Authentic Automotive Assurance Avenue</p>
+                    </div>
+                </div>
+                <nav>
+                    <a href="homepage.html">Home</a>
+                    <a href="register.html">Registration</a>
+                    <a href="login.html">Login</a>
+                    <a href="add-car.html">Add Car</a>
+                    <a href="search.html">Search</a>
+                </nav>
+            </div>
+        </header>
+
+        <script src="cars.js"></script>
+        <script src="search.js"></script>
+        <br/>
+
+        <main class="addcar-section">
+            <div class="container">
+                <div class="links-box">
+                    <div class="addcar-title">
+                        <h2>Search Car</h2>
+                    </div>
+
+                    <form> 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="model">Model</label>
+                                <input type="text" id="ml" name="model">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="year">Year</label>
+                                <input type="text" id="yr" name="year">
+                            </div>
+                        </div>
+                        <button onclick="searchCars(event)">Search</button>
+                    </form>
+        
+                </div>
+            </div>
+        </main>
+
+        <div class="links-section">
+            <div class="container">
+                <div class="links-box">
+                    <div class="page-links" id="results"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
