@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Car - AAAA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container navbar">
+      <div class="logo-area">
+        <img src="images/logo.png" alt="Logo" />
+        <div class="logo-text">
+          <h1>AAAA</h1>
+          <p>Authentic Automotive Assurance Avenue</p>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Registration</a>
+        <a href="login.html">Login</a>
+        <a href="addcar.html">Add Car</a>
+        <a href="search.html">Search</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="addcar-section">
+    <div class="container">
+      <div class="addcar-box">
+        <div class="addcar-title">
+          <h2>Add Your Car</h2>
+          <p>Fill in the details below to publish your car advertisement.</p>
+        </div>
+
+        <form id="addCarForm"> 
+        <div class="form-row">
+          <div class="form-group">
+            <label for="colour">Colour</label>
+            <input type="text" id="colour" name="colour" />
+          </div>
+
+          <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" id="model" name="model" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" />
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" />
+          </div>
+        </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" />
+          </div>
+
+          <div class="form-group">
+            <label for="image">Image of Car</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+          </div>
+          
+        <p id="message"></p>
+        <button type="submit">Submit</button>
+        </form>
+        
+      </div>
+    </div>
+  </main>
+  
+<script src="addcar.js"></script>
+
+</body>
+</html>
