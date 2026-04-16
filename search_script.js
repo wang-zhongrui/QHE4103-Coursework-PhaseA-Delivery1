@@ -1,3 +1,7 @@
+const modalOverlay = document.getElementById('modalOverlay');
+const closeModal = document.getElementById('closeModal');
+const modalContent = document.getElementById('modalContent')
+
 //display all cars when users get into the website
 window.onload = async function() {
         displayCars(allcars);
@@ -52,6 +56,37 @@ function displayCars(cars) {
                 <div class="car-year">Price: ${car.price} CNY</div>
             </div>
         `;
+        card.addEventListener('click', () => {
+            showCarDetails(car);
+        });
         resultContainer.appendChild(card);
     });
+}
+
+function closeModalFunc() {
+    modalOverlay.style.display = 'none';
+}
+
+closeModal.addEventListener('click', closeModalFunc);
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+        closeModalFunc();
+    }
+});
+
+function showCarDetails(car) {
+    modalContent.innerHTML = `
+        <div class="modal-image">
+            <img src="${car.image}" alt="${car.model}" onerror="this.src='car_image/default.jpg'">
+        </div>
+        <div class="modal-info">
+            <h3>${car.model}</h3>
+            <p>Colour: <span>${car.colour}</span></p>
+            <p>Year: <span>${car.year}</span></p>
+            <p>Location: <span>${car.location}</span></p>
+            <p>Price: <span>${car.price} CNY</span></p>
+        </div>
+    `;
+    
+    modalOverlay.style.display = 'flex';
 }
