@@ -1,42 +1,47 @@
-const addCarForm = document.getElementById("addCarForm");
-const message = document.getElementById("message");
+function checkAddCarForm() {
+    var colour = document.getElementById("colour").value.trim();
+    var model = document.getElementById("model").value.trim();
+    var year = document.getElementById("year").value.trim();
+    var location = document.getElementById("location").value.trim();
+    var price = document.getElementById("price").value.trim();
 
-addCarForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+    var yearPattern = /^(19|20)\d{2}$/;
+    var pricePattern = /^\d+$/;
 
-  const colour = document.getElementById("colour").value.trim();
-  const model = document.getElementById("model").value.trim();
-  const year = document.getElementById("year").value.trim();
-  const location = document.getElementById("location").value.trim();
-  const price = document.getElementById("price").value.trim();
+    if (colour === "") {
+        alert("Colour cannot be empty.");
+        return false;
+    }
 
-  const yearPattern = /^(19|20)\d{2}$/;
-  const pricePattern = /^\d+$/;
+    if (model === "") {
+        alert("Model cannot be empty.");
+        return false;
+    }
 
-  if (
-    colour === "" ||
-    model === "" ||
-    year === "" ||
-    location === "" ||
-    price === ""
-  ) {
-    message.textContent = "Please fill in all fields.";
-    message.style.color = "red";
-    return;
-  }
+    if (year === "") {
+        alert("Year cannot be empty.");
+        return false;
+    }
 
-  if (!yearPattern.test(year)) {
-    message.textContent = "Please enter a valid year.";
-    message.style.color = "red";
-    return;
-  }
+    if (!yearPattern.test(year)) {
+        alert("Please enter a valid year.");
+        return false;
+    }
 
-  if (!pricePattern.test(price)) {
-    message.textContent = "Please enter a valid price.";
-    message.style.color = "red";
-    return;
-  }
+    if (location === "") {
+        alert("Location cannot be empty.");
+        return false;
+    }
 
-  message.textContent = "Car information submitted successfully.";
-  message.style.color = "#d7b37c";
-});
+    if (price === "") {
+        alert("Price cannot be empty.");
+        return false;
+    }
+
+    if (!pricePattern.test(price)) {
+        alert("Please enter a valid price.");
+        return false;
+    }
+
+    return true;
+}

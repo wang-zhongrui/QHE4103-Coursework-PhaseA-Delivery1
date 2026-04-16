@@ -36,7 +36,7 @@
           <p>Fill in the details below to publish your car advertisement.</p>
         </div>
 
-        <form id="addCarForm"> 
+        <form id="addCarForm" onsubmit="return checkAddCarForm()">
         <div class="form-row">
           <div class="form-group">
             <label for="colour">Colour</label>
@@ -71,7 +71,6 @@
             <input type="file" id="image" name="image" accept="image/*" />
           </div>
           
-        <p id="message"></p>
         <button type="submit">Submit</button>
         </form>
         
