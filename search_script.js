@@ -43,7 +43,7 @@ function displayCars(cars) {
         const card = document.createElement('div');
         card.className = 'page-link-card';
         card.innerHTML = `
-            <img src="${car.image}" alt="${car.model}" onerror="this.src='car_images/default.jpg'">
+            <img src="${car.image}" alt="${car.model}" onerror="this.src='car_image/default.jpg'">
             <div>
                 <div class="car-model">${car.model}</div>
                 <div class="car-year">Colour: ${car.colour}</div>

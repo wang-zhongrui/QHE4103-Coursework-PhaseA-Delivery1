@@ -6,7 +6,7 @@ let allcars = [
     "year": 2022,
     "location": "Guangzhou",
     "price": "5.09w",
-    "image": "car_images/corolla.jpg"
+    "image": "car_image/corolla.jpg"
   },
   {
     "colour": "silver-gray",
@@ -14,7 +14,7 @@ let allcars = [
     "year": 2023,
     "location": "Guangzhou",
     "price": "7.78w",
-    "image": "car_images/civic.jpg"
+    "image": "car_image/civic.jpg"
   },
   {
     "colour": "Black",
@@ -22,7 +22,7 @@ let allcars = [
     "year": 2021,
     "location": "Guangzhou",
     "price": "12.45w",
-    "image": "car_images/magotan.jpg"
+    "image": "car_image/magotan.jpg"
   },
   {
     "colour": "White",
@@ -30,7 +30,7 @@ let allcars = [
     "year": 2023,
     "location": "Guangzhou",
     "price": "16.96w",
-    "image": "car_images/320Li.jpg"
+    "image": "car_image/320Li.jpg"
   },
   {
     "colour": "White",
@@ -38,7 +38,7 @@ let allcars = [
     "year": 2023,
     "location": "Guangzhou",
     "price": "50.03w",
-    "image": "car_images/718.jpg"
+    "image": "car_image/718.jpg"
   },
   {
     "colour": "White",
@@ -46,7 +46,7 @@ let allcars = [
     "year": 2024,
     "location": "Guangzhou",
     "price": "40.46w",
-    "image": "car_images/E300.jpg"
+    "image": "car_image/E300.jpg"
   },
   {
     "colour": "Blue",
@@ -54,7 +54,7 @@ let allcars = [
     "year": 2020,
     "location": "Beijing",
     "price": "10.05w",
-    "image": "car_images/Q3.jpg"
+    "image": "car_image/Q3.jpg"
   },
   {
     "colour": "Black",
@@ -62,7 +62,7 @@ let allcars = [
     "year": 2022,
     "location": "Beijing",
     "price": "16.88w",
-    "image": "car_images/ModelY.jpg"
+    "image": "car_image/ModelY.jpg"
   },
   {
     "colour": "Deep gray",
@@ -70,7 +70,7 @@ let allcars = [
     "year": 2024,
     "location": "Beijing",
     "price": "31.45w",
-    "image": "car_images/Bronco.jpg"
+    "image": "car_image/Bronco.jpg"
   },
   {
     "colour": "Black",
@@ -78,6 +78,6 @@ let allcars = [
     "year": 2023,
     "location": "Shanghai",
     "price": "208.90w",
-    "image": "car_images/McLaren.jpg"
+    "image": "car_image/McLaren.jpg"
   }
 ]
