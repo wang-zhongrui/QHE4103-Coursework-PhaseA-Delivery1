@@ -17,11 +17,11 @@
                     </div>
                 </div>
                 <nav>
-                    <a href="homepage.html">Home</a>
-                    <a href="registration.html">Registration</a>
-                    <a href="login.html">Login</a>
-                    <a href="addcar.html">Add Car</a>
-                    <a href="search.html">Search</a>
+                    <a href="homepage.php">Home</a>
+                    <a href="registration.php">Registration</a>
+                    <a href="login.php">Login</a>
+                    <a href="addcar.php">Add Car</a>
+                    <a href="search.php">Search</a>
                 </nav>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <h2>Search Car</h2>
                     </div>
 
-                    <form> 
+                    <form method="GET" action="search_result.php" onsubmit="return checkForm()> 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="model">Model</label>
@@ -48,7 +48,7 @@
                                 <input type="text" id="yr" name="year">
                             </div>
                         </div>
-                        <button onclick="searchCars(event)">Search</button>
+                        <button type="submit">Search</button>
                     </form>
         
                 </div>
