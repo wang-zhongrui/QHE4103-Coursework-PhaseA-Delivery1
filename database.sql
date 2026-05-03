@@ -12,3 +12,16 @@ CREATE TABLE IF NOT EXISTS sellers (
     password VARCHAR(255) NOT NULL,
     created_time_seller TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE cars (
+    car_id INT AUTO_INCREMENT PRIMARY KEY,
+    seller_id INT NOT NULL,
+    colour VARCHAR(50) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    year INT NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    image VARCHAR(255),
+    created_time_car TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (seller_id) REFERENCES sellers(seller_id)
+);
