@@ -36,7 +36,7 @@
                         <h2>Search Car</h2>
                     </div>
 
-                    <form method="GET" action="search_result.php" onsubmit="return checkForm()> 
+                    <form method="GET" action="search_results.php" onsubmit="return searchCars(event)"> 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="model">Model</label>
