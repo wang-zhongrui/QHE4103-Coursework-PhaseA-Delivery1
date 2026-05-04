@@ -98,9 +98,41 @@ if (!empty($errors)) {
     );
 }
 
+require_once "db_connect.php";
+
+$username_for_sql = mysqli_real_escape_string($conn, $username);
+
+$check_username_sql = "SELECT * FROM sellers WHERE username = '$username_for_sql'";
+$check_result = mysqli_query($conn, $check_username_sql);
+
+if (!$check_result) {
+    $error_message = "Username check failed: " . mysqli_error($conn);
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Failed",
+        $error_message,
+        "Back to Registration",
+        "registration.php"
+    );
+}
+
+if (mysqli_num_rows($check_result) > 0) {
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Failed",
+        "This username already exists. Please choose another username.",
+        "Back to Registration",
+        "registration.php"
+    );
+}
+
+mysqli_close($conn);
+
 showMessagePage(
-    "Registration Data Validated",
-    "The form data has been received and passed backend validation.",
+    "Username Available",
+    "The form data passed backend validation and the username is available.",
     "Back to Registration",
     "registration.php"
 );
