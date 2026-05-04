@@ -100,6 +100,10 @@ if (!empty($errors)) {
 
 require_once "db_connect.php";
 
+$name_for_sql = mysqli_real_escape_string($conn, $name);
+$address_for_sql = mysqli_real_escape_string($conn, $address);
+$phone_for_sql = mysqli_real_escape_string($conn, $phone);
+$email_for_sql = mysqli_real_escape_string($conn, $email);
 $username_for_sql = mysqli_real_escape_string($conn, $username);
 
 $check_username_sql = "SELECT * FROM sellers WHERE username = '$username_for_sql'";
@@ -128,12 +132,35 @@ if (mysqli_num_rows($check_result) > 0) {
     );
 }
 
-mysqli_close($conn);
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password_for_sql = mysqli_real_escape_string($conn, $hashed_password);
 
-showMessagePage(
-    "Username Available",
-    "The form data passed backend validation and the username is available.",
-    "Back to Registration",
-    "registration.php"
-);
+$insert_sql = "INSERT INTO sellers (name, address, phone, email, username, password)
+               VALUES ('$name_for_sql', '$address_for_sql', '$phone_for_sql', '$email_for_sql', '$username_for_sql', '$hashed_password_for_sql')";
+
+$insert_result = mysqli_query($conn, $insert_sql);
+
+if ($insert_result) {
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Successful",
+        array(
+            "Your seller account has been created successfully.",
+            "The seller details have been stored in the database."
+        ),
+        "Go to Login",
+        "login.php"
+    );
+} else {
+    $error_message = "Database insert failed: " . mysqli_error($conn);
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Failed",
+        $error_message,
+        "Back to Registration",
+        "registration.php"
+    );
+}
 ?>
