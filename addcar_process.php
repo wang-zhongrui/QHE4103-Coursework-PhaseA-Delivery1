@@ -12,7 +12,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$seller_id = $_SESSION['seller_id'];
+
+// For testing purposes, we will use a hardcoded seller_id. In a real application, this would come from the session after the user logs in.
+$seller_id = 1;
+
+// $seller_id = $_SESSION['seller_id'];
 
 $colour = $_POST['colour'];
 $model = $_POST['model'];
