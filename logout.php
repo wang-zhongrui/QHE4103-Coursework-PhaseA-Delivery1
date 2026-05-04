@@ -1,3 +1,11 @@
 <?php
-// it will be implemented in the next step
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+session_unset();
+session_destroy();
+
+header("Location: login.php");
+exit();
 ?>

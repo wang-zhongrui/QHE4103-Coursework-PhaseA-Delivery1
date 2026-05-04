@@ -1,6 +1,9 @@
 <?php
-if(session_staatus() == PHP_SESSION_NONE) {
+if(session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-//will be implemented in the next step
+if (!isset($_SESSION["seller_id"]) || !isset($_SESSION["username"])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
