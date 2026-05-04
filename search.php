@@ -36,15 +36,15 @@
                         <h2>Search Car</h2>
                     </div>
 
-                    <form method="GET" action="search_results.php" onsubmit="return searchCars(event)"> 
+                    <form onsubmit="return searchCars(event)"> 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="model">Model</label>
+                                <label for="ml">Model</label>
                                 <input type="text" id="ml" name="model">
                             </div>
 
                             <div class="form-group">
-                                <label for="year">Year</label>
+                                <label for="yr">Year</label>
                                 <input type="text" id="yr" name="year">
                             </div>
                         </div>
@@ -70,7 +70,6 @@
             </div>
         </div>
 
-        <script src="cars_script.js"></script>
         <script src="search_script.js"></script>
     </body>
 </html>

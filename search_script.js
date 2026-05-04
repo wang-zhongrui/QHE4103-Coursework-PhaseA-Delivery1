@@ -4,32 +4,35 @@ const modalContent = document.getElementById('modalContent')
 
 //display all cars when users get into the website
 window.onload = async function() {
-        displayCars(allcars);
+    try {
+        const response = await fetch('search_results.php');
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        const cars = await response.json();
+        displayCars(cars);
+    } catch (error) {
+        console.error('Initial load error:', error);
+        document.getElementById('results').innerHTML = '<div class="no-data">Failed to load cars.</div>';
+    }
 };
 
-//function to search cars from input information(model,year)
 function searchCars(event) {
     if (event) event.preventDefault();
 
-    //get element and turn them to lowercase and delete spaces
-    const modelInput = document.getElementById('ml').value.trim().toLowerCase();
+    const modelInput = document.getElementById('ml').value.trim();
     const yearInput = document.getElementById('yr').value.trim();
 
-    //filter cars
-    const filtered = allcars.filter(car => {
-        const carModel = car.model.toLowerCase();
-        const carYear = car.year.toString();
-                
-        //model input is empty or a part of the real model
-        const matchModel = modelInput === '' || carModel.includes(modelInput);
-        //year input is empty or exactly equals the real year
-        const matchYear = yearInput === '' || carYear === yearInput;
-                
-        return matchModel && matchYear;
-    });
+    const params = new URLSearchParams();
+    if (modelInput) params.append('model', modelInput);
+    if (yearInput) params.append('year', yearInput);
 
-    //show the results
-    displayCars(filtered);
+    fetch(`search_results.php?${params.toString()}`)
+        .then(response => response.json())
+        .then(cars => {
+            displayCars(cars);
+        })
+        .catch(error => {
+            console.error('Error fetching cars:', error);
+        });
 }
 
 //display the cars
