@@ -1,0 +1,27 @@
+CREATE DATABASE IF NOT EXISTS AAAA_car_sale;
+
+USE AAAA_car_sale;
+
+CREATE TABLE IF NOT EXISTS sellers (
+    seller_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_time_seller TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE cars (
+    car_id INT AUTO_INCREMENT PRIMARY KEY,
+    seller_id INT NOT NULL,
+    colour VARCHAR(50) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    year INT NOT NULL,
+    location VARCHAR(100) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    image VARCHAR(255),
+    created_time_car TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (seller_id) REFERENCES sellers(seller_id)
+);

@@ -3,17 +3,19 @@
 <img src="homepage_image/logo.png" alt="AAAA Logo" width="150"/>
 
 # AAAA Online Car Sale
-### QHE4103 Fundamentals of Web Technology – Phase A (Delivery 1)
+### QHE4103 Fundamentals of Web Technology – Phase A + B (Delivery 1 + 3)
 
 **Authentic Automotive Assurance Avenue**
 
-A responsive front-end website for a fictitious online car sale company, developed collaboratively through a structured GitHub workflow.
+A website for a fictitious online car sale company, developed collaboratively through a structured GitHub workflow.
 
 <br>
 
 <img src="https://img.shields.io/badge/HTML5-Structure-orange?style=for-the-badge" alt="HTML5">
 <img src="https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge" alt="CSS3">
 <img src="https://img.shields.io/badge/JavaScript-Interaction-yellow?style=for-the-badge" alt="JavaScript">
+<img src="https://img.shields.io/badge/PHP-Back--end-777BB4?style=for-the-badge" alt="PHP">
+<img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge" alt="MySQL">
 <img src="https://img.shields.io/badge/GitHub-Teamwork-black?style=for-the-badge" alt="GitHub">
 
 </div>
@@ -22,22 +24,83 @@ A responsive front-end website for a fictitious online car sale company, develop
 
 ## Project Introduction
 
-This repository contains the source code for **Phase A – Delivery 1** of the **QHE4103 Fundamentals of Web Technology** coursework.
+This repository contains the source code for **Phase A – Delivery 1** and **Phase B – Delivery 3** of the **QHE4103 Fundamentals of Web Technology** coursework.
 
-The project requires a team of four students to design and implement a **responsive front-end website** for a fictitious **Online Car Sale** company. The website must include at least **five linked pages**, support **multi-directional navigation**, and demonstrate a clear **collaborative development process** through GitHub branches, pull requests, meeting records, and individual feature contributions.
+The project follows a structured GitHub workflow, including a shared remote repository, feature branches, pull requests, and regular group progress tracking.
 
 Our website is named **AAAA**, which stands for:
 
 > **Authentic Automotive Assurance Avenue**
 
-It is designed to provide a simple and readable platform where:
+The website is designed to provide a simple and readable platform where:
 
 - **Sellers** can register, log in, and advertise their cars
 - **Buyers** can search for cars by model and year
 - **Users** can navigate smoothly between all main pages
 
+
 ---
-##  Team Members and Contributions
+
+## Delivery 3 Back-end Development Overview
+
+<!-- To be completed after implementation. -->
+
+
+---
+
+## Database Design
+
+<!-- To be completed after implementation. -->
+
+
+---
+
+## PHP and Server-side Functionality
+
+<!-- To be completed after implementation. -->
+
+
+---
+
+## Delivery 3 Feature Responsibilities
+
+| Team Member | Delivery 3 Feature | Branch Name | Current Status | Notes |
+|-------------|-------------------|-------------|----------------|-------|
+| **Wang&nbsp;Zhongrui** |  |  |  |  |
+| **Zhang&nbsp;Hanmin** |  |  |  |  |
+| **Liu&nbsp;Xiaomeng** |  |  |  |  |
+| **Wang&nbsp;Yian** |  |  |  |  |
+
+---
+
+## Delivery 3 Progress Notes
+
+<!-- To be completed after implementation. -->
+
+
+---
+
+## Delivery 3 Testing Notes
+
+<!-- To be completed after implementation. -->
+
+---
+
+## Delivery 3 Submission Preparation
+
+<!-- To be completed after implementation. -->
+
+
+
+---
+
+# Previous Phase A Content
+
+The following sections are retained from the previous README to preserve the original front-end project information and teamwork record.
+
+---
+
+## Team Members and Contributions
 
 | Team Member | Role | Main Contribution |
 |-------------|------|-------------------|
@@ -45,6 +108,7 @@ It is designed to provide a simple and readable platform where:
 | **Zhang&nbsp;Hanmin** | Member | Homepage design and implementation, visual style exploration, logo direction, Meeting Minutes writing |
 | **Liu&nbsp;Xiaomeng** | Member | Registration and login pages, validation-related requirement checking, bug finding |
 | **Wang&nbsp;Yian** | Member | Search page, GitHub workflow support, collaboration troubleshooting, pictures collecting |
+
 ---
 
 ## Website Pages
@@ -61,7 +125,7 @@ The current website includes the following main pages:
 
 ---
 
-## Main Features
+## Existing Front-end Features
 
 - Responsive page layout
 - Consistent navigation bar across major pages
@@ -72,6 +136,7 @@ The current website includes the following main pages:
 - Search result display with detailed car information
 - Client-side validation using JavaScript regular expressions
 - Unified black-and-gold visual style
+
 ---
 
 ## Design Concept
@@ -85,10 +150,9 @@ Our team aimed to create a website that is:
 
 After discussion and style research, we chose a **black-and-gold** colour theme to give the website a more polished and premium appearance suitable for an online car sale platform.
 
-
 ---
-##  Website Preview
 
+## Website Preview
 
 ### Homepage
 <p align="center">
@@ -106,7 +170,7 @@ After discussion and style research, we chose a **black-and-gold** colour theme 
 
 ### Add Car Page
 <p align="center">
-  <img src="README_assets/addcar-preview.png" alt=“Add Car Page Preview" width="85%">
+  <img src="README_assets/addcar-preview.png" alt="Add Car Page Preview" width="85%">
 </p>
 
 ### Search Page
@@ -118,10 +182,9 @@ After discussion and style research, we chose a **black-and-gold** colour theme 
   <img src="README_assets/detail-preview.png" alt="Detail popup Preview" width="85%">
 </p>
 
-
 ---
 
-##  Collaboration and Teamwork
+## Collaboration and Teamwork
 
 Our team paid close attention not only to coding, but also to how we worked together throughout the project.
 
@@ -135,8 +198,7 @@ Our team paid close attention not only to coding, but also to how we worked toge
 - issue-based improvement after merging
 - final testing and collective review
 
-
-###  Meeting Overview
+### Meeting Overview
 
 To make our process clear and traceable, we recorded our development progress through a series of meetings.
 
@@ -151,28 +213,24 @@ To make our process clear and traceable, we recorded our development progress th
 | **Meeting&nbsp;7** | 14&nbsp;Apr&nbsp;2026 | Requirement re-checking, CSS naming unification, PR merging, issue-based refinement planning |
 | **Meeting&nbsp;8** | 16&nbsp;Apr&nbsp;2026 | Final testing, responsive layout check, validation review, final integration and README completion |
 
-
-###  Issues
+### Issues
 
 To make collaboration more visible and organised, our team used **Issues** during development.
 
-
 #### Issues were used to:
+
 - record integration problems
 - track navigation or file naming problems
 - organise follow-up improvements after merging
 
 #### Examples of collaboration topics included:
+
 - inconsistent page links and redirects
 - CSS filename conflicts during merging
 - navigation checking across all pages
 - improvements to search result interaction
 
-
-
-
 ---
-
 
 <div align="center">
 

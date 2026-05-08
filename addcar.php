@@ -20,10 +20,10 @@
 
       <nav>
         <a href="homepage.html">Home</a>
-        <a href="registration.html">Registration</a>
-        <a href="login.html">Login</a>
-        <a href="addcar.html">Add Car</a>
-        <a href="search.html">Search</a>
+        <a href="registration.php">Registration</a>
+        <a href="login.php">Login</a>
+        <a href="addcar.php">Add Car</a>
+        <a href="search.php">Search</a>
       </nav>
     </div>
   </header>
@@ -36,7 +36,12 @@
           <p>Fill in the details below to publish your car advertisement.</p>
         </div>
 
-        <form id="addCarForm" onsubmit="return checkAddCarForm()">
+        <form id="addCarForm"
+          method="POST"
+          action="addcar_process.php"
+          enctype="multipart/form-data"
+          onsubmit="return checkAddCarForm()">
+          
         <div class="form-row">
           <div class="form-group">
             <label for="colour">Colour</label>
