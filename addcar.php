@@ -1,3 +1,7 @@
+<?php
+require_once 'auth_check.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +36,10 @@
     <div class="container">
       <div class="addcar-box">
         <div class="addcar-title">
+          <?php if (isset($_GET['success'])): ?>
+            <p>Car added successfully.</p>
+          <?php endif; ?>
+
           <h2>Add Your Car</h2>
           <p>Fill in the details below to publish your car advertisement.</p>
         </div>
