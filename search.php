@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <nav>
-                    <a href="homepage.php">Home</a>
+                    <a href="homepage.html">Home</a>
                     <a href="registration.php">Registration</a>
                     <a href="login.php">Login</a>
                     <a href="addcar.php">Add Car</a>
