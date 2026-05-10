@@ -22,7 +22,7 @@
       </div>
 
       <nav>
-        <a href="homepage.php">Home</a>
+        <a href="homepage.html">Home</a>
         <a href="registration.php">Registration</a>
         <a href="login.php">Login</a>
         <a href="addcar.php">Add Car</a>
@@ -63,7 +63,7 @@
           <button type="submit" class="login-button">Login</button>
 
           <p class="register-link">
-            Don't have an account? <a href="registration.html">Register here</a>
+            Don't have an account? <a href="registration.php">Register here</a>
           </p> 
         </form>
       </div>
