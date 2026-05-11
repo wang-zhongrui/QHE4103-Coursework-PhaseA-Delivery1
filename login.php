@@ -23,10 +23,10 @@
 
       <nav>
         <a href="homepage.html">Home</a>
-        <a href="registration.html">Registration</a>
-        <a href="login.html">Login</a>
-        <a href="addcar.html">Add Car</a>
-        <a href="search.html">Search</a>
+        <a href="registration.php">Registration</a>
+        <a href="login.php">Login</a>
+        <a href="addcar.php">Add Car</a>
+        <a href="search.php">Search</a>
       </nav>
     </div>
   </header>
@@ -37,7 +37,19 @@
         <h2>Seller Login</h2>
         <p>Please enter your username and password to access your seller account.</p>
 
-        <form onsubmit="return checkLoginForm();">
+        <?php
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] === "empty") {
+                echo "<p class='error-message'>Username and password are required.</p>";
+            } elseif ($_GET["error"] === "invalid") {
+                echo "<p class='error-message'>The information entered is invalid.</p>";
+            } elseif ($_GET["error"] === "server") {
+                echo "<p class='error-message'>Server error. Please try again later.</p>";
+            }
+        }
+        ?>
+        
+        <form method="POST" action="login_process.php" onsubmit="return checkLoginForm();">
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username">
@@ -51,7 +63,7 @@
           <button type="submit" class="login-button">Login</button>
 
           <p class="register-link">
-            Don't have an account? <a href="registration.html">Register here</a>
+            Don't have an account? <a href="registration.php">Register here</a>
           </p> 
         </form>
       </div>

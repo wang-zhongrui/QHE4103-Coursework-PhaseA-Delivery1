@@ -18,10 +18,10 @@
                 </div>
                 <nav>
                     <a href="homepage.html">Home</a>
-                    <a href="registration.html">Registration</a>
-                    <a href="login.html">Login</a>
-                    <a href="addcar.html">Add Car</a>
-                    <a href="search.html">Search</a>
+                    <a href="registration.php">Registration</a>
+                    <a href="login.php">Login</a>
+                    <a href="addcar.php">Add Car</a>
+                    <a href="search.php">Search</a>
                 </nav>
             </div>
         </header>
@@ -36,19 +36,19 @@
                         <h2>Search Car</h2>
                     </div>
 
-                    <form> 
+                    <form onsubmit="return searchCars(event)"> 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="model">Model</label>
+                                <label for="ml">Model</label>
                                 <input type="text" id="ml" name="model">
                             </div>
 
                             <div class="form-group">
-                                <label for="year">Year</label>
+                                <label for="yr">Year</label>
                                 <input type="text" id="yr" name="year">
                             </div>
                         </div>
-                        <button onclick="searchCars(event)">Search</button>
+                        <button type="submit">Search</button>
                     </form>
         
                 </div>
@@ -70,7 +70,6 @@
             </div>
         </div>
 
-        <script src="cars_script.js"></script>
         <script src="search_script.js"></script>
     </body>
 </html>
