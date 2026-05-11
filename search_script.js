@@ -50,7 +50,7 @@ function displayCars(cars) {
         const card = document.createElement('div');
         card.className = 'page-link-card';
         card.innerHTML = `
-            <img src="${car.image}" alt="${car.model}" onerror="this.src='car_image/default.jpg'">
+            <img src="${car.image}" alt="${car.model}" onerror="this.src='homepage_image/logo.png'">
             <div>
                 <div class="car-model">${car.model}</div>
                 <div class="car-year">Colour: ${car.colour}</div>
@@ -80,7 +80,7 @@ modalOverlay.addEventListener('click', (e) => {
 function showCarDetails(car) {
     modalContent.innerHTML = `
         <div class="modal-image">
-            <img src="${car.image}" alt="${car.model}" onerror="this.src='car_image/default.jpg'">
+            <img src="${car.image}" alt="${car.model}" onerror="this.src='homepage_image/logo.png'">
         </div>
         <div class="modal-info">
             <h3>${car.model}</h3>
