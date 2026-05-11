@@ -5,7 +5,6 @@
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>AAAA - Registration</title> 
-
 </head>
 
 <body>
@@ -22,10 +21,10 @@
 
       <nav>
         <a href="homepage.html">Home</a>
-        <a href="registration.html">Registration</a>
-        <a href="login.html">Login</a>
-        <a href="addcar.html">Add Car</a>
-        <a href="search.html">Search</a>
+        <a href="registration.php">Registration</a>
+        <a href="login.php">Login</a>
+        <a href="addcar.php">Add Car</a>
+        <a href="search.php">Search</a>
       </nav> 
     </div>
   </header>
@@ -36,7 +35,7 @@
         <h2>Seller Registration</h2>
         <p>Please complete the form below to create your seller account.</p>
 
-        <form onsubmit="return checkRegistrationForm();">
+        <form method="POST" action="registration_process.php" onsubmit="return checkRegistrationForm();">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name">
@@ -44,7 +43,7 @@
 
           <div class="form-group">
             <label for="address">Address</label>
-            <input type="text" id="address" name="address" >
+            <input type="text" id="address" name="address">
           </div>
 
           <div class="form-group">
@@ -65,16 +64,18 @@
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
+          </div>
 
           <button type="submit" class="register-button">Register</button> 
 
           <p class="login-link">
-            Already have an account? <a href="login.html">Login here</a>
+            Already have an account? <a href="login.php">Login here</a>
           </p> 
         </form>
       </div>
     </div>
   </section>
+
   <script src="login_and_registration_script.js"></script>
 </body>
 </html>

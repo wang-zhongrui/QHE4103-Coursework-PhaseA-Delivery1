@@ -1,0 +1,166 @@
+<?php
+
+function showMessagePage($title, $messages, $linkText, $linkUrl) {
+    if (!is_array($messages)) {
+        $messages = array($messages);
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login_and_registration_style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($title); ?></title>
+</head>
+<body>
+    <section class="register-section">
+        <div class="container">
+            <div class="register-box">
+                <h2><?php echo htmlspecialchars($title); ?></h2>
+
+                <?php
+                foreach ($messages as $message) {
+                    echo "<p>" . htmlspecialchars($message) . "</p>";
+                }
+                ?>
+
+                <p class="login-link">
+                    <a href="<?php echo htmlspecialchars($linkUrl); ?>">
+                        <?php echo htmlspecialchars($linkText); ?>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<?php
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header("Location: registration.php");
+    exit();
+}
+
+$name = isset($_POST["name"]) ? trim($_POST["name"]) : "";
+$address = isset($_POST["address"]) ? trim($_POST["address"]) : "";
+$phone = isset($_POST["phone"]) ? trim($_POST["phone"]) : "";
+$email = isset($_POST["email"]) ? trim($_POST["email"]) : "";
+$username = isset($_POST["username"]) ? trim($_POST["username"]) : "";
+$password = isset($_POST["password"]) ? trim($_POST["password"]) : "";
+
+$errors = array();
+
+if ($name == "") {
+    $errors[] = "Name cannot be empty.";
+} elseif (!preg_match("/^[a-zA-Z ]+$/", $name)) {
+    $errors[] = "Name must only contain letters and spaces.";
+}
+
+if ($address == "") {
+    $errors[] = "Address cannot be empty.";
+} elseif (!preg_match("/^[a-zA-Z0-9 ]+$/", $address)) {
+    $errors[] = "Address must only contain letters, numbers and spaces.";
+}
+
+if ($phone == "") {
+    $errors[] = "Phone number cannot be empty.";
+} elseif (!preg_match("/^1[0-9]{10}$/", $phone)) {
+    $errors[] = "Please enter a valid Chinese phone number.";
+}
+
+if ($email == "") {
+    $errors[] = "Email cannot be empty.";
+} elseif (!preg_match("/^[0-9a-zA-Z]+@[0-9a-zA-Z]+\.(cn|com)$/", $email)) {
+    $errors[] = "Please enter a valid email address.";
+}
+
+if ($username == "") {
+    $errors[] = "Username cannot be empty.";
+} elseif (!preg_match("/^[a-zA-Z0-9]{6,}$/", $username)) {
+    $errors[] = "Username must be at least 6 characters and contain only letters and numbers.";
+}
+
+if ($password == "") {
+    $errors[] = "Password cannot be empty.";
+} elseif (!preg_match("/^[a-zA-Z0-9]{6,}$/", $password)) {
+    $errors[] = "Password must be at least 6 characters and contain only letters and numbers.";
+}
+
+if (!empty($errors)) {
+    showMessagePage(
+        "Registration Failed",
+        $errors,
+        "Back to Registration",
+        "registration.php"
+    );
+}
+
+require_once "db_connect.php";
+
+$name_for_sql = mysqli_real_escape_string($conn, $name);
+$address_for_sql = mysqli_real_escape_string($conn, $address);
+$phone_for_sql = mysqli_real_escape_string($conn, $phone);
+$email_for_sql = mysqli_real_escape_string($conn, $email);
+$username_for_sql = mysqli_real_escape_string($conn, $username);
+
+$check_username_sql = "SELECT * FROM sellers WHERE username = '$username_for_sql'";
+$check_result = mysqli_query($conn, $check_username_sql);
+
+if (!$check_result) {
+    $error_message = "Username check failed: " . mysqli_error($conn);
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Failed",
+        $error_message,
+        "Back to Registration",
+        "registration.php"
+    );
+}
+
+if (mysqli_num_rows($check_result) > 0) {
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Failed",
+        "This username already exists. Please choose another username.",
+        "Back to Registration",
+        "registration.php"
+    );
+}
+
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password_for_sql = mysqli_real_escape_string($conn, $hashed_password);
+
+$insert_sql = "INSERT INTO sellers (name, address, phone, email, username, password)
+               VALUES ('$name_for_sql', '$address_for_sql', '$phone_for_sql', '$email_for_sql', '$username_for_sql', '$hashed_password_for_sql')";
+
+$insert_result = mysqli_query($conn, $insert_sql);
+
+if ($insert_result) {
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Successful",
+        array(
+            "Your seller account has been created successfully.",
+            "The seller details have been stored in the database."
+        ),
+        "Go to Login",
+        "login.php"
+    );
+} else {
+    $error_message = "Database insert failed: " . mysqli_error($conn);
+    mysqli_close($conn);
+
+    showMessagePage(
+        "Registration Failed",
+        $error_message,
+        "Back to Registration",
+        "registration.php"
+    );
+}
+?>

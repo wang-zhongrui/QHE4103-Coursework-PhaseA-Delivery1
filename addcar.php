@@ -1,3 +1,7 @@
+<?php
+require_once 'auth_check.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +24,10 @@
 
       <nav>
         <a href="homepage.html">Home</a>
-        <a href="registration.html">Registration</a>
-        <a href="login.html">Login</a>
-        <a href="addcar.html">Add Car</a>
-        <a href="search.html">Search</a>
+        <a href="registration.php">Registration</a>
+        <a href="login.php">Login</a>
+        <a href="addcar.php">Add Car</a>
+        <a href="search.php">Search</a>
       </nav>
     </div>
   </header>
@@ -32,11 +36,33 @@
     <div class="container">
       <div class="addcar-box">
         <div class="addcar-title">
+          <?php if (isset($_GET['success'])): ?>
+            <?php if (isset($_GET['upload']) && $_GET['upload'] === 'success'): ?>
+              <p class="success-message">Car information and image uploaded successfully.</p >
+
+            <?php elseif (isset($_GET['upload']) && $_GET['upload'] === 'warning'): ?>
+              <p class="success-message">Car information has been saved successfully.</p >
+              <p class="upload-warning">
+                Image upload failed because the uploads folder is not writable. Please check folder permissions. For macOS/Linux, you can run: chmod 777 uploads
+              </p >
+              <p class="upload-warning">A default image will be used for this car.</p >
+
+            <?php elseif (isset($_GET['upload']) && $_GET['upload'] === 'none'): ?>
+              <p class="success-message">Car information has been saved successfully.</p >
+              <p class="upload-warning">No image was uploaded. A default image will be used.</p >
+            <?php endif; ?>
+          <?php endif; ?>
+
           <h2>Add Your Car</h2>
           <p>Fill in the details below to publish your car advertisement.</p>
         </div>
 
-        <form id="addCarForm" onsubmit="return checkAddCarForm()">
+        <form id="addCarForm"
+          method="POST"
+          action="addcar_process.php"
+          enctype="multipart/form-data"
+          onsubmit="return checkAddCarForm()">
+          
         <div class="form-row">
           <div class="form-group">
             <label for="colour">Colour</label>

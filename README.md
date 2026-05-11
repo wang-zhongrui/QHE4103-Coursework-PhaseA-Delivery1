@@ -85,7 +85,7 @@ The current website mainly includes the following pages:
 
 ---
 
-## Main Features
+## Existing Front-end Features
 
 ### Front-end Features
 
@@ -194,6 +194,7 @@ Our collaboration process included:
 
 ##  Website Preview
 
+## Website Preview
 
 ### Homepage
 <p align="center">
@@ -211,7 +212,7 @@ Our collaboration process included:
 
 ### Add Car Page
 <p align="center">
-  <img src="README_assets/addcar-preview.png" alt=“Add Car Page Preview" width="85%">
+  <img src="README_assets/addcar-preview.png" alt="Add Car Page Preview" width="85%">
 </p>
 
 ### Search Page
@@ -222,7 +223,6 @@ Our collaboration process included:
 <p align="center">
   <img src="README_assets/detail-preview.png" alt="Detail popup Preview" width="85%">
 </p>
-
 
 ---
 
