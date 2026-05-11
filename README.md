@@ -3,17 +3,21 @@
 <img src="homepage_image/logo.png" alt="AAAA Logo" width="150"/>
 
 # AAAA Online Car Sale
-### QHE4103 Fundamentals of Web Technology – Phase A (Delivery 1)
+
+### QHE4103 Fundamentals of Web Technology – Phase A Delivery 1 and Phase B
 
 **Authentic Automotive Assurance Avenue**
 
-A responsive front-end website for a fictitious online car sale company, developed collaboratively through a structured GitHub workflow.
+A responsive online car sale website developed collaboratively through GitHub workflow.  
+This repository was first used for Phase A Delivery 1 front-end development and was later extended in the same repository for Phase B back-end development.
 
 <br>
 
 <img src="https://img.shields.io/badge/HTML5-Structure-orange?style=for-the-badge" alt="HTML5">
 <img src="https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge" alt="CSS3">
 <img src="https://img.shields.io/badge/JavaScript-Interaction-yellow?style=for-the-badge" alt="JavaScript">
+<img src="https://img.shields.io/badge/PHP-Backend-purple?style=for-the-badge" alt="PHP">
+<img src="https://img.shields.io/badge/MySQL-Database-lightblue?style=for-the-badge" alt="MySQL">
 <img src="https://img.shields.io/badge/GitHub-Teamwork-black?style=for-the-badge" alt="GitHub">
 
 </div>
@@ -22,71 +26,172 @@ A responsive front-end website for a fictitious online car sale company, develop
 
 ## Project Introduction
 
-This repository contains the source code for **Phase A – Delivery 1** of the **QHE4103 Fundamentals of Web Technology** coursework.
+This repository contains the source code for the **AAAA Online Car Sale** website project for **QHE4103 Fundamentals of Web Technology**.
 
-The project requires a team of four students to design and implement a **responsive front-end website** for a fictitious **Online Car Sale** company. The website must include at least **five linked pages**, support **multi-directional navigation**, and demonstrate a clear **collaborative development process** through GitHub branches, pull requests, meeting records, and individual feature contributions.
+This repository mainly records two development stages:
 
-Our website is named **AAAA**, which stands for:
+- **Phase A Delivery 1:** non-AI front-end website development using HTML, CSS and JavaScript.
+- **Phase B:** back-end development using PHP and MySQL based on the Phase A Delivery 1 website.
+
+The website is named **AAAA**, which stands for:
 
 > **Authentic Automotive Assurance Avenue**
 
-It is designed to provide a simple and readable platform where:
+The main functions of the website include:
 
-- **Sellers** can register, log in, and advertise their cars
-- **Buyers** can search for cars by model and year
-- **Users** can navigate smoothly between all main pages
+- sellers can register an account;
+- sellers can log in with username and password;
+- logged-in sellers can publish car advertisements;
+- buyers can search for cars by model and year;
+- seller information and car information can be stored in and retrieved from the database.
 
 ---
-##  Team Members and Contributions
 
-| Team Member | Role | Main Contribution |
-|-------------|------|-------------------|
-| **Wang&nbsp;Zhongrui** | Team&nbsp;Leader | Repository setup, project coordination, add car page, README integration, progress tracking |
-| **Zhang&nbsp;Hanmin** | Member | Homepage design and implementation, visual style exploration, logo direction, Meeting Minutes writing |
-| **Liu&nbsp;Xiaomeng** | Member | Registration and login pages, validation-related requirement checking, bug finding |
-| **Wang&nbsp;Yian** | Member | Search page, GitHub workflow support, collaboration troubleshooting, pictures collecting |
+## Team Members and Contributions
+
+### Phase A Delivery 1 Contributions
+
+| Team Member | Main Contribution |
+|-------------|-------------------|
+| **Wang Zhongrui** | Repository setup, project coordination, add car page, README integration, progress tracking |
+| **Zhang Hanmin** | Homepage design and implementation, visual style exploration, logo direction, meeting minutes writing |
+| **Liu Xiaomeng** | Registration and login pages, validation-related requirement checking, bug finding |
+| **Wang Yian** | Search page, GitHub workflow support, collaboration troubleshooting, picture collection |
+
+### Phase B Contributions
+
+| Team Member | Feature Branch | Main Responsibility |
+|-------------|----------------|---------------------|
+| **Zhang Hanmin** | `feature-seller_registration_backend` | Seller registration backend |
+| **Liu Xiaomeng** | `feature-login_backend` | Seller login, logout and session backend |
+| **Wang Zhongrui** | `feature-add_car_backend` | Add car backend |
+| **Wang Yian** | `feature-search_backend` | Buyer search backend |
+
+For Phase B, the work was divided into four back-end features. Each member worked on one back-end feature branch and merged the completed work into the `develop` branch through pull requests.
+
 ---
 
 ## Website Pages
 
-The current website includes the following main pages:
+The current website mainly includes the following pages:
 
 | Page | Description |
 |------|-------------|
-| **Homepage** | Introduces the company, displays the logo, and provides links to all key pages |
-| **Registration Page** | Allows sellers to create an account through a validated form |
-| **Login Page** | Allows sellers to log into the system |
-| **Add Car Page** | Allows sellers to submit a car advertisement with car details |
-| **Search Page** | Allows users to search for cars by model and year and view detailed results |
+| **Homepage** | Introduces the company and provides links to the main pages |
+| **Registration Page** | Allows sellers to create an account |
+| **Login Page** | Allows registered sellers to log in |
+| **Add Car Page** | Allows logged-in sellers to submit car advertisements |
+| **Search Page** | Allows buyers to search for cars by model and year |
 
 ---
 
 ## Main Features
 
-- Responsive page layout
-- Consistent navigation bar across major pages
-- Seller registration form
-- Seller login form
-- Add car form with image upload field
-- Search functionality by **model** and **year**
-- Search result display with detailed car information
-- Client-side validation using JavaScript regular expressions
-- Unified black-and-gold visual style
+### Front-end Features
+
+- Responsive page layout;
+- Consistent navigation bar;
+- Seller registration form;
+- Seller login form;
+- Add car form with image upload field;
+- Search form and result display;
+- JavaScript regular expression validation;
+- Black-and-gold visual style.
+
+### Back-end Features
+
+- MySQL database connection;
+- Seller data storage;
+- Server-side form processing;
+- Password hashing;
+- Login verification;
+- Session handling;
+- Logout function;
+- Add car access protection;
+- Car data storage;
+- Search result retrieval from database.
+
 ---
 
-## Design Concept
+## Database Design
 
-Our team aimed to create a website that is:
+The project uses a MySQL database named:
 
-- **clean**
-- **easy to read**
-- **visually consistent**
-- **simple to navigate**
+`AAAA_car_sale`
 
-After discussion and style research, we chose a **black-and-gold** colour theme to give the website a more polished and premium appearance suitable for an online car sale platform.
+The database mainly contains two tables:
 
+- `sellers` — stores registered seller information;
+- `cars` — stores car advertisements published by sellers.
+
+The `cars` table uses `seller_id` to connect car advertisements with sellers.
+
+### Cars Table
+
+<div align="center">
+<img src="README_assets/database_cars_table.png" alt="Cars Table" width="1000"/>
+</div>
+
+### Sellers Table
+
+<div align="center">
+<img src="README_assets/database_sellers_table.png" alt="Sellers Table" width="1000"/>
+</div>
 
 ---
+
+## Main Backend Files
+
+The main back-end files used in Phase B include:
+
+| File | Purpose |
+|------|---------|
+| `database.sql` | Defines the database and tables |
+| `db_connect.php` | Connects PHP files to the MySQL database |
+| `auth_check.php` | Checks whether a seller is logged in |
+| `registration.php` | Displays the seller registration form |
+| `registration_process.php` | Processes seller registration data |
+| `login.php` | Displays the seller login form |
+| `login_process.php` | Processes seller login and creates session variables |
+| `logout.php` | Logs the seller out and clears the session |
+| `addcar.php` | Displays the add car form |
+| `addcar_process.php` | Processes car advertisement submission |
+| `search.php` | Displays the buyer search form |
+| `search_results.php` | Retrieves matching car data from the database |
+
+---
+
+## Development Workflow and Testing
+
+The team continued using GitHub workflow in Phase B. The project mainly used `main`, `develop`, and back-end feature branches. Each member worked on one back-end feature branch and merged the completed work into the `develop` branch through pull requests.
+
+The main Phase B feature branches include:
+
+- `feature-seller_registration_backend`
+- `feature-login_backend`
+- `feature-add_car_backend`
+- `feature-search_backend`
+
+During integration, the team tested the main back-end functions, including registration, login, logout, session handling, add car, and search. Some minor issues, such as navigation links and file paths, were recorded through GitHub Issues and improved during later updates.
+
+---
+
+## Collaboration and Teamwork
+
+Our team focused not only on code implementation, but also on development process, task division, and integration management.
+
+Our collaboration process included:
+
+- Regular group meetings;
+- Requirement analysis;
+- GitHub feature branch workflow;
+- Pull request based integration;
+- Issue-based improvement after merging;
+- Back-end agreement before implementation;
+- Final testing and review.
+
+---
+
 ##  Website Preview
 
 
@@ -120,59 +225,6 @@ After discussion and style research, we chose a **black-and-gold** colour theme 
 
 
 ---
-
-##  Collaboration and Teamwork
-
-Our team paid close attention not only to coding, but also to how we worked together throughout the project.
-
-### Our collaboration process included:
-
-- regular meetings from planning to final testing
-- shared analysis of coursework requirements
-- discussion of wireframes before implementation
-- GitHub workflow learning and mutual support
-- pull request based integration
-- issue-based improvement after merging
-- final testing and collective review
-
-
-###  Meeting Overview
-
-To make our process clear and traceable, we recorded our development progress through a series of meetings.
-
-| Meeting | Date | Main Focus |
-|--------|------|------------|
-| **Meeting&nbsp;1** | 24&nbsp;Mar&nbsp;2026 | Team formation, leader confirmation, repository creation, initial project understanding |
-| **Meeting&nbsp;2** | 28&nbsp;Mar&nbsp;2026 | Requirement analysis, workflow discussion, timeline planning, style research preparation |
-| **Meeting&nbsp;3** | 3&nbsp;Apr&nbsp;2026 | Feature branch creation, task allocation, wireframes, HTML structure planning |
-| **Meeting&nbsp;4** | 8&nbsp;Apr&nbsp;2026 | Website naming, logo discussion, progress review, HTML skeleton deadline |
-| **Meeting&nbsp;5** | 10&nbsp;Apr&nbsp;2026 | Unified style decision, homepage as reference page, intensive coding plan |
-| **Meeting&nbsp;6** | 11&nbsp;Apr&nbsp;2026 | GitHub problem-solving, path discussion, README task added |
-| **Meeting&nbsp;7** | 14&nbsp;Apr&nbsp;2026 | Requirement re-checking, CSS naming unification, PR merging, issue-based refinement planning |
-| **Meeting&nbsp;8** | 16&nbsp;Apr&nbsp;2026 | Final testing, responsive layout check, validation review, final integration and README completion |
-
-
-###  Issues
-
-To make collaboration more visible and organised, our team used **Issues** during development.
-
-
-#### Issues were used to:
-- record integration problems
-- track navigation or file naming problems
-- organise follow-up improvements after merging
-
-#### Examples of collaboration topics included:
-- inconsistent page links and redirects
-- CSS filename conflicts during merging
-- navigation checking across all pages
-- improvements to search result interaction
-
-
-
-
----
-
 
 <div align="center">
 
