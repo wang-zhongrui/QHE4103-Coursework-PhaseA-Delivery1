@@ -37,7 +37,20 @@ require_once 'auth_check.php';
       <div class="addcar-box">
         <div class="addcar-title">
           <?php if (isset($_GET['success'])): ?>
-            <p>Car added successfully.</p>
+            <?php if (isset($_GET['upload']) && $_GET['upload'] === 'success'): ?>
+              <p class="success-message">Car information and image uploaded successfully.</p >
+
+            <?php elseif (isset($_GET['upload']) && $_GET['upload'] === 'warning'): ?>
+              <p class="success-message">Car information has been saved successfully.</p >
+              <p class="upload-warning">
+                Image upload failed because the uploads folder is not writable. Please check folder permissions. For macOS/Linux, you can run: chmod 777 uploads
+              </p >
+              <p class="upload-warning">A default image will be used for this car.</p >
+
+            <?php elseif (isset($_GET['upload']) && $_GET['upload'] === 'none'): ?>
+              <p class="success-message">Car information has been saved successfully.</p >
+              <p class="upload-warning">No image was uploaded. A default image will be used.</p >
+            <?php endif; ?>
           <?php endif; ?>
 
           <h2>Add Your Car</h2>
