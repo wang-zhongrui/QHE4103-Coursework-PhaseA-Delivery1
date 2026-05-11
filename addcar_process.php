@@ -11,14 +11,25 @@ $location = isset($_POST['location']) ? trim($_POST['location']) : '';
 $price = isset($_POST['price']) ? trim($_POST['price']) : '';
 
 $image_path = '';
+$upload_warning = false;
 
 if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-    $image_name = basename($_FILES['image']['name']);
-    $tmp_name = $_FILES['image']['tmp_name'];
-    $target_path = 'uploads/' . $image_name;
+    $upload_dir = __DIR__ . '/uploads/';
 
-    if (move_uploaded_file($tmp_name, $target_path)) {
-        $image_path = $target_path;
+    if (is_writable($upload_dir)) {
+        $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+        $image_name = 'car_' . time() . '.' . $extension;
+
+        $target_file = $upload_dir . $image_name;
+        $target_path = 'uploads/' . $image_name;
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
+            $image_path = $target_path;
+        } else {
+            $upload_warning = true;
+        }
+    } else {
+        $upload_warning = true;
     }
 }
 
@@ -46,7 +57,15 @@ mysqli_stmt_bind_param(
 if (mysqli_stmt_execute($stmt)) {
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-    header("Location: addcar.php?success=1");
+
+    if ($image_path !== '') {
+        header("Location: addcar.php?success=1&upload=success");
+    } elseif ($upload_warning) {
+        header("Location: addcar.php?success=1&upload=warning");
+    } else {
+        header("Location: addcar.php?success=1&upload=none");
+    }
+
     exit();
 } else {
     echo "Error: " . mysqli_stmt_error($stmt);
