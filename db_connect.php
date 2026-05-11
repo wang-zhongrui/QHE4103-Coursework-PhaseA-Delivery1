@@ -1,12 +1,13 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "Lxm123456.";
+$dbusername = "root";
+$dbpassword = "";
 $dbname = "AAAA_car_sale";
 
-$conn = mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
 if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error);
+    die("Database connection failed: " . mysqli_connect_error());
 }
+mysqli_set_charset($conn,"utf8mb4");
 ?>
